@@ -10,7 +10,7 @@ import (
 	"github.com/9seconds/mtg/cli"
 	"github.com/9seconds/mtg/config"
 	"github.com/9seconds/mtg/utils"
-	kingpin "gopkg.in/alecthomas/kingpin.v2"
+	"gopkg.in/alecthomas/kingpin.v2"
 )
 
 var version = "dev" // has to be set by ldflags
@@ -119,6 +119,11 @@ var (
 		Envar("MTG_NTP_SERVERS").
 		Default("0.pool.ntp.org", "1.pool.ntp.org", "2.pool.ntp.org", "3.pool.ntp.org").
 		Strings()
+	runTestDC = runCommand.Flag("test-dc",
+		"Uses test DC instead of production.").
+		Envar("MTG_TEST_DC").
+		Default("false").
+		Bool()
 	runSecret = runCommand.Arg("secret", "Secret of this proxy.").Required().HexBytes()
 	runAdtag  = runCommand.Arg("adtag", "ADTag of the proxy.").HexBytes()
 )
@@ -154,6 +159,7 @@ func main() {
 			config.Opt{Option: config.OptionTypeAntiReplayMaxSize, Value: *runAntiReplayMaxSize},
 			config.Opt{Option: config.OptionTypeMultiplexPerConnection, Value: *runMultiplexPerConnection},
 			config.Opt{Option: config.OptionTypeNTPServers, Value: *runNTPServers},
+			config.Opt{Option: config.OptionTypeTestDC, Value: *runTestDC},
 			config.Opt{Option: config.OptionTypeSecret, Value: *runSecret},
 			config.Opt{Option: config.OptionTypeAdtag, Value: *runAdtag},
 		)

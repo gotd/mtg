@@ -1,6 +1,7 @@
 package telegram
 
 import (
+	"github.com/9seconds/mtg/conntypes"
 	"net"
 	"sync"
 	"time"
@@ -21,16 +22,7 @@ func Init() {
 	initOnce.Do(func() {
 		logger := zap.S().Named("telegram")
 
-		Direct = &directTelegram{
-			baseTelegram: baseTelegram{
-				dialer:      net.Dialer{Timeout: telegramDialTimeout},
-				logger:      logger.Named("direct"),
-				v4DefaultDC: directV4DefaultIdx,
-				v6DefaultDC: directV6DefaultIdx,
-				v4Addresses: directV4Addresses,
-				v6Addresses: directV6Addresses,
-			},
-		}
+		Direct = CreateDirect(directV4DefaultIdx, directV6DefaultIdx, directV4Addresses, directV6Addresses)
 
 		tg := &middleTelegram{
 			baseTelegram: baseTelegram{
@@ -45,4 +37,19 @@ func Init() {
 
 		Middle = tg
 	})
+}
+
+func CreateDirect(defaultDCV4, defaultDCV6 conntypes.DC, v4, v6 map[conntypes.DC][]string) Telegram {
+	logger := zap.S().Named("telegram")
+
+	return &directTelegram{
+		baseTelegram: baseTelegram{
+			dialer:      net.Dialer{Timeout: telegramDialTimeout},
+			logger:      logger.Named("direct"),
+			v4DefaultDC: defaultDCV4,
+			v6DefaultDC: defaultDCV6,
+			v4Addresses: v4,
+			v6Addresses: v6,
+		},
+	}
 }

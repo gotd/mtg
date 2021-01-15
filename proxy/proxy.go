@@ -1,7 +1,9 @@
 package proxy
 
+import "C"
 import (
 	"context"
+	"github.com/9seconds/mtg/telegram"
 	"net"
 
 	"github.com/9seconds/mtg/config"
@@ -88,12 +90,16 @@ func (p *Proxy) accept(conn net.Conn) {
 		ClientProtocol: clientProtocol,
 	}
 
-	err = nil
-
 	if config.C.MiddleProxyMode() {
 		middleConnection(req)
 	} else {
-		err = directConnection(req)
+		dialer := telegram.Direct
+		if config.C.TestDC {
+			dialer = telegram.CreateDirect(2, 2, map[conntypes.DC][]string{
+				2: {"149.154.167.40:443"},
+			}, map[conntypes.DC][]string{})
+		}
+		err = directConnection(dialer, req)
 	}
 
 	logger.Infow("Client disconnected", "error", err, "addr", conn.RemoteAddr())
