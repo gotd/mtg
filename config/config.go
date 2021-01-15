@@ -55,6 +55,7 @@ const (
 	OptionTypeBind
 	OptionTypePublicIPv4
 	OptionTypePublicIPv6
+	OptionTypeTestDC
 
 	OptionTypeStatsBind
 	OptionTypeStatsNamespace
@@ -78,9 +79,11 @@ const (
 )
 
 type Config struct {
-	Bind             *net.TCPAddr      `json:"bind"`
-	PublicIPv4       *net.TCPAddr      `json:"public_ipv4"`
-	PublicIPv6       *net.TCPAddr      `json:"public_ipv6"`
+	Bind       *net.TCPAddr `json:"bind"`
+	PublicIPv4 *net.TCPAddr `json:"public_ipv4"`
+	PublicIPv6 *net.TCPAddr `json:"public_ipv6"`
+	TestDC     bool         `json:"test_dc"`
+
 	StatsBind        *net.TCPAddr      `json:"stats_bind"`
 	StatsdAddr       *net.TCPAddr      `json:"stats_addr"`
 	StatsdTagsFormat *statsd.TagFormat `json:"statsd_tags_format"`
@@ -189,6 +192,8 @@ func Init(options ...Opt) error { // nolint: gocyclo, funlen
 			if C.PublicIPv6 == nil {
 				C.PublicIPv6 = &net.TCPAddr{}
 			}
+		case OptionTypeTestDC:
+			C.TestDC = opt.Value.(bool)
 		case OptionTypeStatsBind:
 			C.StatsBind = opt.Value.(*net.TCPAddr)
 		case OptionTypeStatsNamespace:

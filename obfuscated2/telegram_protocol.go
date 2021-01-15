@@ -12,7 +12,15 @@ import (
 )
 
 func TelegramProtocol(req *protocol.TelegramRequest) (conntypes.StreamReadWriteCloser, error) {
-	conn, err := telegram.Direct.Dial(req.ClientProtocol.DC(),
+	return TelegramProtocolWithDialer(telegram.Direct, req)
+}
+
+func TelegramProtocolWithDialer(dialer telegram.Telegram, req *protocol.TelegramRequest) (conntypes.StreamReadWriteCloser, error) {
+	if dialer == nil {
+		dialer = telegram.Direct
+	}
+
+	conn, err := dialer.Dial(req.ClientProtocol.DC(),
 		req.ClientProtocol.ConnectionProtocol())
 	if err != nil {
 		return nil, fmt.Errorf("cannot dial to telegram: %w", err)

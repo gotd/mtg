@@ -7,13 +7,14 @@ import (
 	"github.com/9seconds/mtg/conntypes"
 	"github.com/9seconds/mtg/obfuscated2"
 	"github.com/9seconds/mtg/protocol"
+	"github.com/9seconds/mtg/telegram"
 	"go.uber.org/zap"
 )
 
 const directPipeBufferSize = 1024
 
-func directConnection(request *protocol.TelegramRequest) error {
-	telegramConnRaw, err := obfuscated2.TelegramProtocol(request)
+func directConnection(dialer telegram.Telegram, request *protocol.TelegramRequest) error {
+	telegramConnRaw, err := obfuscated2.TelegramProtocolWithDialer(dialer, request)
 	if err != nil {
 		return err
 	}
