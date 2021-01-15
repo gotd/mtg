@@ -8,10 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/9seconds/mtg/config"
-	"github.com/9seconds/mtg/conntypes"
 	statsd "github.com/smira/go-statsd"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/config"
+	"github.com/gotd/mtg/conntypes"
 )
 
 var (

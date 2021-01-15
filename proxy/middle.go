@@ -3,10 +3,11 @@ package proxy
 import (
 	"sync"
 
-	"github.com/9seconds/mtg/conntypes"
-	"github.com/9seconds/mtg/protocol"
-	"github.com/9seconds/mtg/wrappers/packetack"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/conntypes"
+	"github.com/gotd/mtg/protocol"
+	"github.com/gotd/mtg/wrappers/packetack"
 )
 
 func middleConnection(request *protocol.TelegramRequest) {

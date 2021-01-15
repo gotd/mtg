@@ -1,18 +1,18 @@
 package proxy
 
-import "C"
 import (
 	"context"
-	"github.com/9seconds/mtg/telegram"
 	"net"
 
-	"github.com/9seconds/mtg/config"
-	"github.com/9seconds/mtg/conntypes"
-	"github.com/9seconds/mtg/protocol"
-	"github.com/9seconds/mtg/stats"
-	"github.com/9seconds/mtg/utils"
-	"github.com/9seconds/mtg/wrappers/stream"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/config"
+	"github.com/gotd/mtg/conntypes"
+	"github.com/gotd/mtg/protocol"
+	"github.com/gotd/mtg/stats"
+	"github.com/gotd/mtg/telegram"
+	"github.com/gotd/mtg/utils"
+	"github.com/gotd/mtg/wrappers/stream"
 )
 
 type Proxy struct {

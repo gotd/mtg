@@ -5,10 +5,11 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/9seconds/mtg/config"
-	"github.com/9seconds/mtg/conntypes"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+
+	"github.com/gotd/mtg/config"
+	"github.com/gotd/mtg/conntypes"
 )
 
 type statsPrometheus struct {

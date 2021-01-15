@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/9seconds/mtg/utils"
+	"github.com/gotd/mtg/utils"
 )
 
 type Handshake struct {

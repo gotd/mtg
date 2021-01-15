@@ -1,10 +1,11 @@
 package telegram
 
 import (
-	"github.com/9seconds/mtg/conntypes"
 	"net"
 	"sync"
 	"time"
+
+	"github.com/gotd/mtg/conntypes"
 
 	"go.uber.org/zap"
 )

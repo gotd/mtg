@@ -5,9 +5,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/9seconds/mtg/conntypes"
-	"github.com/9seconds/mtg/telegram/api"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/conntypes"
+	"github.com/gotd/mtg/telegram/api"
 )
 
 const middleTelegramBackgroundUpdateEvery = time.Hour

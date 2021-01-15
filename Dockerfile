@@ -12,8 +12,8 @@ RUN set -x \
     make \
     upx
 
-COPY . /go/src/github.com/9seconds/mtg/
-WORKDIR /go/src/github.com/9seconds/mtg
+COPY . /go/src/github.com/gotd/mtg/
+WORKDIR /go/src/github.com/gotd/mtg
 
 RUN set -x \
   && make -j 4 static \
@@ -31,4 +31,4 @@ ENV MTG_BIND=0.0.0.0:3128 \
 EXPOSE 3128 3129
 
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
-COPY --from=build /go/src/github.com/9seconds/mtg/mtg /mtg
+COPY --from=build /go/src/github.com/gotd/mtg/mtg /mtg

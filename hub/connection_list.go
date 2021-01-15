@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/9seconds/mtg/config"
+	"github.com/gotd/mtg/config"
 )
 
 type connectionList struct {

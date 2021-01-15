@@ -3,7 +3,7 @@ package stats
 import (
 	"net"
 
-	"github.com/9seconds/mtg/conntypes"
+	"github.com/gotd/mtg/conntypes"
 )
 
 type IngressTrafficInterface interface {

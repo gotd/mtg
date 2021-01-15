@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/9seconds/mtg/config"
-	"github.com/9seconds/mtg/conntypes"
-	"github.com/9seconds/mtg/hub"
-	"github.com/9seconds/mtg/mtproto/rpc"
-	"github.com/9seconds/mtg/protocol"
+	"github.com/gotd/mtg/config"
+	"github.com/gotd/mtg/conntypes"
+	"github.com/gotd/mtg/hub"
+	"github.com/gotd/mtg/mtproto/rpc"
+	"github.com/gotd/mtg/protocol"
 )
 
 type wrapperProxy struct {

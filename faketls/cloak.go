@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/9seconds/mtg/wrappers/rwc"
+	"github.com/gotd/mtg/wrappers/rwc"
 )
 
 const (

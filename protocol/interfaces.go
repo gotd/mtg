@@ -1,6 +1,6 @@
 package protocol
 
-import "github.com/9seconds/mtg/conntypes"
+import "github.com/gotd/mtg/conntypes"
 
 type ClientProtocol interface {
 	Handshake(conntypes.StreamReadWriteCloser) (conntypes.StreamReadWriteCloser, error)

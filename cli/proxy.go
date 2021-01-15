@@ -5,18 +5,19 @@ import (
 	"os"
 	"time"
 
-	"github.com/9seconds/mtg/antireplay"
-	"github.com/9seconds/mtg/config"
-	"github.com/9seconds/mtg/faketls"
-	"github.com/9seconds/mtg/hub"
-	"github.com/9seconds/mtg/ntp"
-	"github.com/9seconds/mtg/obfuscated2"
-	"github.com/9seconds/mtg/proxy"
-	"github.com/9seconds/mtg/stats"
-	"github.com/9seconds/mtg/telegram"
-	"github.com/9seconds/mtg/utils"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+
+	"github.com/gotd/mtg/antireplay"
+	"github.com/gotd/mtg/config"
+	"github.com/gotd/mtg/faketls"
+	"github.com/gotd/mtg/hub"
+	"github.com/gotd/mtg/ntp"
+	"github.com/gotd/mtg/obfuscated2"
+	"github.com/gotd/mtg/proxy"
+	"github.com/gotd/mtg/stats"
+	"github.com/gotd/mtg/telegram"
+	"github.com/gotd/mtg/utils"
 )
 
 func Proxy() error { // nolint: funlen

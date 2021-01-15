@@ -5,11 +5,12 @@ import (
 	"math/rand"
 	"net"
 
-	"github.com/9seconds/mtg/config"
-	"github.com/9seconds/mtg/conntypes"
-	"github.com/9seconds/mtg/utils"
-	"github.com/9seconds/mtg/wrappers/stream"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/config"
+	"github.com/gotd/mtg/conntypes"
+	"github.com/gotd/mtg/utils"
+	"github.com/gotd/mtg/wrappers/stream"
 )
 
 type baseTelegram struct {

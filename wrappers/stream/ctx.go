@@ -6,8 +6,9 @@ import (
 	"net"
 	"time"
 
-	"github.com/9seconds/mtg/conntypes"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/conntypes"
 )
 
 type wrapperCtx struct {

@@ -6,11 +6,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/9seconds/mtg/conntypes"
-	"github.com/9seconds/mtg/mtproto"
-	"github.com/9seconds/mtg/mtproto/rpc"
-	"github.com/9seconds/mtg/protocol"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/conntypes"
+	"github.com/gotd/mtg/mtproto"
+	"github.com/gotd/mtg/mtproto/rpc"
+	"github.com/gotd/mtg/protocol"
 )
 
 const connectionTTL = time.Hour

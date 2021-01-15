@@ -6,7 +6,7 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/9seconds/mtg/config"
+	"github.com/gotd/mtg/config"
 )
 
 var Stats Interface

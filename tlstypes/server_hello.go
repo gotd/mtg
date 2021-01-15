@@ -8,8 +8,9 @@ import (
 	"io"
 	mrand "math/rand"
 
-	"github.com/9seconds/mtg/config"
 	"golang.org/x/crypto/curve25519"
+
+	"github.com/gotd/mtg/config"
 )
 
 type ServerHello struct {

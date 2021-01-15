@@ -4,11 +4,12 @@ import (
 	"io"
 	"sync"
 
-	"github.com/9seconds/mtg/conntypes"
-	"github.com/9seconds/mtg/obfuscated2"
-	"github.com/9seconds/mtg/protocol"
-	"github.com/9seconds/mtg/telegram"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/conntypes"
+	"github.com/gotd/mtg/obfuscated2"
+	"github.com/gotd/mtg/protocol"
+	"github.com/gotd/mtg/telegram"
 )
 
 const directPipeBufferSize = 1024

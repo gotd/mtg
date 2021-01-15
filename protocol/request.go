@@ -3,8 +3,9 @@ package protocol
 import (
 	"context"
 
-	"github.com/9seconds/mtg/conntypes"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/conntypes"
 )
 
 type TelegramRequest struct {

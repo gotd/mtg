@@ -5,9 +5,10 @@ import (
 	"net"
 	"time"
 
-	"github.com/9seconds/mtg/config"
-	"github.com/9seconds/mtg/conntypes"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/config"
+	"github.com/gotd/mtg/conntypes"
 )
 
 type connPurpose uint8

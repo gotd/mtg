@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/9seconds/mtg/conntypes"
+	"github.com/gotd/mtg/conntypes"
 )
 
 type ProxyResponseType uint8

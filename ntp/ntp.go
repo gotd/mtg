@@ -5,9 +5,10 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/9seconds/mtg/config"
 	"github.com/beevik/ntp"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/config"
 )
 
 const autoUpdatePeriod = time.Minute

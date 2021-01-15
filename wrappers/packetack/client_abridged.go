@@ -6,9 +6,10 @@ import (
 	"io"
 	"net"
 
-	"github.com/9seconds/mtg/conntypes"
-	"github.com/9seconds/mtg/utils"
 	"go.uber.org/zap"
+
+	"github.com/gotd/mtg/conntypes"
+	"github.com/gotd/mtg/utils"
 )
 
 const (
